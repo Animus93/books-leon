@@ -1,4 +1,25 @@
 <div class="authors-table">
-    <div class="authors-table__title">Авторы</div>
-    <div class="authors-table__content"></div>
+  <table class="authors-table__content">
+    <caption>
+      Авторы
+    </caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Дата Рождения</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let author of authors.authorsState; let id = index">
+        <td>{{ id }}</td>
+        <td>{{ author.surname }}</td>
+        <td>{{ author.name }}</td>
+        <td>{{ author.patronymic }}</td>
+        <td>{{ author.birthDate }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

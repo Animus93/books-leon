@@ -1,9 +1,37 @@
 <div class="authors-input">
-    <form class="authors-input__form" [formGroup]="applayForm" (submit)="formSubmit()">
-        <input class="authors-input__form__item" type="text" placeholder="Имя" formControlName="name">
-        <input class="authors-input__form__item" type="text" placeholder="Фамилия" formControlName="surname">
-        <input class="authors-input__form__item" type="text" placeholder="Отчество" formControlName="patronymic">
-        <input class="authors-input__form__item" type="date" placeholder="Дата рождения" formControlName="birthDate">
-        <input type="submit" class="authors-input__form__submit">
-    </form>
+  <form
+    class="authors-input__form"
+    [formGroup]="applayForm"
+    (submit)="formSubmit()"
+  >
+    <input
+      class="authors-input__form__item"
+      type="text"
+      placeholder="Имя"
+      formControlName="name"
+      [class.invalid]="checkField('name')"
+    />
+    <input
+      class="authors-input__form__item"
+      type="text"
+      placeholder="Фамилия"
+      formControlName="surname"
+      [class.invalid]="checkField('surname')"
+    />
+    <input
+      class="authors-input__form__item"
+      type="text"
+      placeholder="Отчество"
+      formControlName="patronymic"
+      [class.invalid]="checkField('patronymic')"
+    />
+    <input
+      class="authors-input__form__item"
+      type="date"
+      placeholder="Дата рождения"
+      formControlName="birthDate"
+      [class.invalid]="checkField('birthDate')"
+    />
+    <input type="submit" class="authors-input__form__submit" />
+  </form>
 </div>

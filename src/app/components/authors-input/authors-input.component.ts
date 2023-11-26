@@ -5,32 +5,34 @@ import { AuthorsStateService } from 'src/app/services/authors-state.service';
 @Component({
   selector: 'app-authors-input',
   templateUrl: './authors-input.component.html',
-  styleUrls: ['./authors-input.component.css']
+  styleUrls: ['./authors-input.component.css'],
 })
 export class AuthorsInputComponent {
-
-  constructor(private authrosState: AuthorsStateService){}
+  constructor(private authrosState: AuthorsStateService) {}
+  isValidate: boolean = false;
 
   applayForm = new FormGroup({
-    name: new FormControl('', [
-      Validators.required
-    ]),
-    surname: new FormControl('', [
-      Validators.required
-    ]),
-    patronymic: new FormControl('', [
-      Validators.required
-    ]),
-    birthDate: new FormControl('', [
-      Validators.required
-    ])
+    name: new FormControl('', [Validators.required]),
+    surname: new FormControl('', [Validators.required]),
+    patronymic: new FormControl('', [Validators.required]),
+    birthDate: new FormControl('', [Validators.required]),
+  });
 
-  })
+  checkField(field: string): boolean {
+    if (
+      this.applayForm.get(`${field}`)?.invalid &&
+      (this.applayForm.get(`${field}`)?.dirty ||
+        this.applayForm.get(`${field}`)?.touched ||
+        this.isValidate)
+    ) {
+      return true;
+    }
+    return false;
+  }
 
-  formSubmit(){
-    console.log(this.applayForm.value)
-    if(this.applayForm.value){
-      // this.authrosState.authorsState.push(this.applayForm.value)
+  formSubmit() {
+    if (this.applayForm.valid) {
+      this.authrosState.addAuthor(this.applayForm.getRawValue());
     }
   }
 }
