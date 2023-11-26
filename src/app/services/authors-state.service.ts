@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { Iauthors } from '../interfaces/authors/interface';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthorsStateService {
+  constructor() {}
 
-  constructor() { }
-
-  // $authorsState: BehaviorSubject<Iauthors[]> = new BehaviorSubject<Iauthors[]>([])
-
-  authorsState: Iauthors[] = []
+  authorsState: Iauthors[] = [];
 }
