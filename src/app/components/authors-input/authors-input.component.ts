@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthorsStateService } from 'src/app/services/authors-state.service';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-authors-input',
@@ -8,7 +8,7 @@ import { AuthorsStateService } from 'src/app/services/authors-state.service';
   styleUrls: ['./authors-input.component.css'],
 })
 export class AuthorsInputComponent {
-  constructor(private authrosState: AuthorsStateService) {}
+  constructor(private authrosState: StateService) {}
   isValidate: boolean = false;
 
   applayForm = new FormGroup({
@@ -31,8 +31,12 @@ export class AuthorsInputComponent {
   }
 
   formSubmit() {
+    console.log(this.applayForm.value)
     if (this.applayForm.valid) {
       this.authrosState.addAuthor(this.applayForm.getRawValue());
+    }
+    else {
+      this.isValidate = true
     }
   }
 }

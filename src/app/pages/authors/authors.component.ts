@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent {
-
 }

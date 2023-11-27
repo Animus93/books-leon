@@ -10,6 +10,7 @@ import { AuthorsInputComponent } from './components/authors-input/authors-input.
 import { BooksInputComponent } from './components/books-input/books-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorsTableComponent } from './components/authors-table/authors-table.component';
+import { MaxLengthPipe } from './pipes/max-length.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AuthorsTableComponent } from './components/authors-table/authors-table.
     HeaderComponent,
     AuthorsInputComponent,
     BooksInputComponent,
-    AuthorsTableComponent
+    AuthorsTableComponent,
+    MaxLengthPipe
   ],
   imports: [
     BrowserModule,

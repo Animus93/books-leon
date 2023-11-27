@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthorsStateService } from 'src/app/services/authors-state.service';
+import { window } from 'rxjs';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-authors-table',
@@ -7,5 +8,6 @@ import { AuthorsStateService } from 'src/app/services/authors-state.service';
   styleUrls: ['./authors-table.component.css'],
 })
 export class AuthorsTableComponent {
-  constructor(public authors: AuthorsStateService) {}
+  constructor(public authors: StateService) {}
+  public window = window
 }

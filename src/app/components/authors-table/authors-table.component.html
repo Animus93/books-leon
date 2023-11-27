@@ -1,5 +1,5 @@
 <div class="authors-table">
-  <table class="authors-table__content">
+  <table class="authors-table__content" *ngIf="authors.authorsState.length">
     <caption>
       Авторы
     </caption>
@@ -13,13 +13,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let author of authors.authorsState; let id = index">
+      <tr *ngFor="let author of authors.getSortedAuthorsState(); let id = index">
         <td>{{ id }}</td>
-        <td>{{ author.surname }}</td>
-        <td>{{ author.name }}</td>
-        <td>{{ author.patronymic }}</td>
+        <td>{{ author.surname | maxLength: 13}}</td>
+        <td>{{ author.name | maxLength: 13}}</td>
+        <td>{{ author.patronymic | maxLength: 13}}</td>
         <td>{{ author.birthDate }}</td>
       </tr>
     </tbody>
   </table>
+  <div class="no-table">
+    <h2 class="no-table__title" *ngIf="!authors.authorsState.length">Список авторов пуст</h2>
+  </div>
 </div>

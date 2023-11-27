@@ -1,0 +1,43 @@
+.books-input {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+  }
+  
+  .books-input__form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  input {
+    width: 200px;
+    height: 30px;
+  }
+  
+  .books-input__form__submit {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(42, 85, 165, 0.116);
+    font-family: "Oswald", sans-serif;
+    transition: all 0.5s;
+    text-align: center;
+  }
+  
+  .books-input__form__submit:hover {
+    color: white;
+    background-color: rgb(42, 85, 165);
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  .invalid {
+    border: 1px solid red;
+  }
+  @media (max-width: 1111px) {
+    .books-input__form {
+      flex-direction: column;
+    }
+  }
+  
