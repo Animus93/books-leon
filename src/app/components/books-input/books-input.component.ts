@@ -5,18 +5,21 @@ import { StateService } from 'src/app/services/state.service';
 @Component({
   selector: 'app-books-input',
   templateUrl: './books-input.component.html',
-  styleUrls: ['./books-input.component.css']
+  styleUrls: ['./books-input.component.css'],
 })
 export class BooksInputComponent {
-
-  constructor(public state: StateService) { }
+  constructor(public state: StateService) {}
   isValidate: boolean = false;
 
   applayForm = new FormGroup({
     author: new FormControl('', [Validators.required]),
     title: new FormControl('', [Validators.required]),
     publisher: new FormControl('', [Validators.required]),
-    year: new FormControl('', [Validators.minLength(4), Validators.maxLength(4), Validators.required]),
+    year: new FormControl('', [
+      Validators.minLength(4),
+      Validators.maxLength(4),
+      Validators.required,
+    ]),
   });
 
   checkField(field: string): boolean {
@@ -34,9 +37,9 @@ export class BooksInputComponent {
   formSubmit() {
     if (this.applayForm.valid) {
       this.state.addBook(this.applayForm.getRawValue());
-    }
-    else {
-      this.isValidate = true
+      this.applayForm.reset();
+    } else {
+      this.isValidate = true;
     }
   }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { window } from 'rxjs';
 import { StateService } from 'src/app/services/state.service';
 
 @Component({
@@ -9,5 +8,4 @@ import { StateService } from 'src/app/services/state.service';
 })
 export class AuthorsTableComponent {
   constructor(public authors: StateService) {}
-  public window = window
 }

@@ -31,12 +31,12 @@ export class AuthorsInputComponent {
   }
 
   formSubmit() {
-    console.log(this.applayForm.value)
+    console.log(this.applayForm.value);
     if (this.applayForm.valid) {
       this.authrosState.addAuthor(this.applayForm.getRawValue());
-    }
-    else {
-      this.isValidate = true
+      this.applayForm.reset();
+    } else {
+      this.isValidate = true;
     }
   }
 }

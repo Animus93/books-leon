@@ -11,6 +11,7 @@ import { BooksInputComponent } from './components/books-input/books-input.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorsTableComponent } from './components/authors-table/authors-table.component';
 import { MaxLengthPipe } from './pipes/max-length.pipe';
+import { BooksTableComponent } from './components/books-table/books-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MaxLengthPipe } from './pipes/max-length.pipe';
     AuthorsInputComponent,
     BooksInputComponent,
     AuthorsTableComponent,
-    MaxLengthPipe
+    MaxLengthPipe,
+    BooksTableComponent
   ],
   imports: [
     BrowserModule,

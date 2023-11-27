@@ -1,7 +1,7 @@
 .authors-input {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  padding: 100px 0 25px 0;
 }
 
 .authors-input__form {

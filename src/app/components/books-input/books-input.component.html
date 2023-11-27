@@ -1,17 +1,48 @@
 <div class="books-input">
-    <form class="books-input__form" [formGroup]="applayForm" (submit)="formSubmit()">
-        <select class="books-input__form__item" type="text" formControlName="author"
-            [class.invalid]="checkField('author')">
-            <option value="">Выберите автора</option>
-            <option *ngFor="let author of state.authorsState">{{author.surname}}
-                {{author.name?.slice(0,1)}}.{{author.surname?.slice(0,1)}}.</option>
-        </select>
-        <input class="books-input__form__item" type="text" placeholder="Название" formControlName="title"
-            [class.invalid]="checkField('title')" />
-        <input class="books-input__form__item" type="text" placeholder="Издатель" formControlName="publisher"
-            [class.invalid]="checkField('publisher')" />
-        <input class="books-input__form__item" type="number" step="1" placeholder="год издание" formControlName="year"
-            [class.invalid]="checkField('year')" />
-        <input type="submit" class="books-input__form__submit" />
-    </form>
+  <form
+    class="books-input__form"
+    [formGroup]="applayForm"
+    (submit)="formSubmit()"
+  >
+    <select
+      class="books-input__form__item"
+      type="text"
+      formControlName="author"
+      [class.invalid]="checkField('author')"
+    >
+      <option value="">Выберите автора</option>
+      <option *ngFor="let author of state.authorsState">
+        {{ author.surname }} {{ author.name?.slice(0, 1) }}.{{
+          author.surname?.slice(0, 1)
+        }}.
+      </option>
+    </select>
+    <input
+      class="books-input__form__item"
+      type="text"
+      placeholder="Название"
+      formControlName="title"
+      [class.invalid]="checkField('title')"
+    />
+    <input
+      class="books-input__form__item"
+      type="text"
+      placeholder="Издатель"
+      formControlName="publisher"
+      [class.invalid]="checkField('publisher')"
+    />
+    <input
+      class="books-input__form__item"
+      type="number"
+      step="1"
+      placeholder="год"
+      formControlName="year"
+      [class.invalid]="checkField('year')"
+    />
+    <input
+      type="submit"
+      value="Добавить книгу"
+      class="books-input__form__submit"
+    />
+  </form>
 </div>
