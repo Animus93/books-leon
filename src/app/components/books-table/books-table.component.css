@@ -37,9 +37,6 @@ caption {
   cursor: pointer;
   transition: all 0.5s;
 }
-img {
-  /* transition: all 0.5s; */
-}
 .sortBtn:hover img {
   animation-name: rotate;
   animation-duration: 0.1s;

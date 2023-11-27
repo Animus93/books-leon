@@ -41,21 +41,6 @@ export class StateService {
         return a[field] < b[field] ? 1 : -1;
       });
     }
-    // console.log(field, field === this.sortBooksField);
-    // field == this.sortBooksField
-    //   ? this.booksState.sort((a: Ibooks, b: Ibooks): any => {
-    //       // @ts-ignore
-    //       return a[field] < b[field] ? 1 : -1;
-    //     }) &&
-    //     (this.sortBooksField = '') &&
-    //     console.log('1')
-    //   : this.booksState.sort((a: Ibooks, b: Ibooks): any => {
-    //       // @ts-ignore
-    //       return a[field] > b[field] ? 1 : -1;
-    //     }) &&
-    //     (this.sortBooksField = field) &&
-    //     console.log('2');
-    // return this.booksState;
   }
 
   addAuthor(author: Iauthors) {
